@@ -71,7 +71,7 @@ class _SceneryState extends State<Scenery> {
                     Expanded(
                       child: RadioListTile<ThemeType>(
                         contentPadding: EdgeInsets.symmetric(horizontal: 4),
-                        title: const Text('Other'),
+                        title: const Text('Pastel'),
                         groupValue: myTheme.themeType,
                         value: ThemeType.Other,
                         onChanged: (ThemeType? mode) => myTheme.setThemeType(ThemeType.Other),

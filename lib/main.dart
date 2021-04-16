@@ -41,10 +41,15 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    final myTheme = Provider.of<MyTheme>(context, listen: false);
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+          title: Text(widget.title,
+          style: TextStyle(color :myTheme.themeType == ThemeType.Dark ? Colors.white : Colors.blueGrey),
+        ),
+        backgroundColor: myTheme.themeType == ThemeType.Dark ? Colors.blueGrey : Colors.white,
       ),
+      backgroundColor: myTheme.themeType == ThemeType.Dark ? Colors.blueGrey : Colors.white,
       body: Scenery(),
     );
   }

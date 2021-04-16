@@ -19,9 +19,9 @@ class CustomWidgetThemes {
     switch (themeType) {
       case ThemeType.Light:
         sceneryThemeData = SceneryThemeData(
-          skyFillColor: Colors.grey,
-          mountainFillColor: Colors.blueGrey,
-          waterFillColor: Colors.blueGrey[800]!,
+          skyFillColor: getColorFromHex("#FFD454"),
+          mountainFillColor: getColorFromHex("#ed9154"),
+          waterFillColor:  getColorFromHex("#57c9e4"),
           drawMoon: false,
           drawSun: true,
         );
@@ -37,13 +37,24 @@ class CustomWidgetThemes {
         break;
       case ThemeType.Other:
         sceneryThemeData = SceneryThemeData(
-          skyFillColor: Colors.grey,
-          mountainFillColor: Colors.blueGrey,
-          waterFillColor: Colors.blueGrey[800]!,
+          skyFillColor: getColorFromHex("#ee756d"),
+          mountainFillColor: getColorFromHex("#623957"),
+          waterFillColor: getColorFromHex("#49101f"),
           drawMoon: true,
           drawSun: true,
         );
         break;
     }
   }
+}
+
+Color getColorFromHex(String hexColor) {
+  hexColor = hexColor.replaceAll("#", "");
+  if (hexColor.length == 6) {
+    hexColor = "FF" + hexColor;
+  }
+  if (hexColor.length == 8) {
+    return Color(int.parse("0x$hexColor"));
+  }
+  return Colors.white;
 }
